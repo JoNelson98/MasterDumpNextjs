@@ -13,7 +13,7 @@ export default function Contact() {
           marginWidth={0}
           title="map"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=4426%20peachtree%20road+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=dallas%20texas+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           style={{ filter: ' contrast(1.2) opacity(0.4)' }}
         />
       </div>
@@ -32,14 +32,7 @@ export default function Contact() {
           <div className="relative mb-4">
             <ContactSub
               title="Address"
-              description="4426 Peachtree Road, Balch Springs, TX 75180"
-              buttonTitle="Get Directions"
-              btnFunction={() => {
-                window.open(
-                  'https://www.google.com/maps/dir/?api=1&destination=4426%20Peachtree%20Rd%20Balch%20Springs%20TX%2075180'
-                )
-              }}
-              showButton
+              description="Dallas Metropolitan Area"
             />
           </div>
           <div className="relative mb-4">

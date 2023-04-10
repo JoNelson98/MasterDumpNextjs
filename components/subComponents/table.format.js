@@ -2,8 +2,6 @@ export const col = [
   {
     field: 'fullName',
     use: 'Name'
-    //Will not be used in search filtering
-    //  use_in_search:false
   },
 
   {
@@ -21,11 +19,15 @@ export const col = [
 
   {
     field: 'deliveryDate',
-    use: 'Delivery Date'
+    use: 'Rental Duration'
   },
   {
     field: 'deliveryPlacement',
     use: 'delivery Placement'
+  },
+  {
+    field: 'dumpsterSize',
+    use: 'Dumpster Size'
   },
   {
     field: 'company',
@@ -34,11 +36,18 @@ export const col = [
 ]
 
 export const formatDate = date => {
+  const DURATION_OF_RENTAL = 5
   const d = new Date(date)
+  const end = new Date(date)
+  end.setDate(end.getDate() + DURATION_OF_RENTAL)
+  const eYear = end.getFullYear()
+  const eMonth = end.getMonth() + 1
+  const eDay = end.getDate()
+
   const year = d.getFullYear()
   const month = d.getMonth() + 1
   const day = d.getDate()
-  return `${month}/${day}/${year}`
+  return `${month}/${day}/${year}` + ' - ' + `${eMonth}/${eDay}/${eYear}`
 }
 
 export const formatApplicants = applicants => {

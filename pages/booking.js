@@ -16,7 +16,7 @@ export default function booking() {
         <div className="mx-auto w-full max-w-[550px]">
           <Section delay={0.1}>
             <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-4xl font-bold tracking-tight dark:text-white bg-gradient-to-l from-red-500 to-sky-500 bg-clip-text text-transparent  sm:text-6xl">
+              <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-l from-red-500 to-sky-500 bg-clip-text text-transparent  sm:text-6xl">
                 Submit A Rental Order.
               </h2>
               <p className="mt-6 mb-8 text-lg leading-8 text-gray-600 dark:text-gray-300">
@@ -38,18 +38,20 @@ export default function booking() {
                 city: '',
                 deliveryDate: new Date(),
                 deliveryPlacement: '',
+                dumpsterSize: '',
                 company: ''
               }}
               validationSchema={formSchema}
-              onSubmit={async (values, { setSubmitting }) => {
+              onSubmit={async (values, { setSubmitting, resetForm }) => {
                 try {
                   await submitFormService(values).then(() => {
                     alert(
                       'Form Submitted Successfully! The Team will get back with you shortly.'
                     )
+                    resetForm()
                   })
                 } catch (error) {
-                  alert(error.message)
+                  alert(error)
                   console.error(error)
                 }
 
@@ -208,7 +210,37 @@ export default function booking() {
                       <div className="text-red-500">{errors.city}</div>
                     ) : null}
                   </div>
-
+                  <div className="mb-5">
+                    <label
+                      htmlFor="dumpsterSize"
+                      className="mb-3 block text-base font-medium dark:text-white text-[#07074D]"
+                    >
+                      Dumpster Size
+                    </label>
+                    <select
+                      name="dumpsterSize"
+                      value={values.dumpsterSize}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    >
+                      <option value="" label="Select a Dumpster Size">
+                        Select a Dumpster Size
+                      </option>
+                      {[
+                        '10 yards (300$)',
+                        '15 yards (350$)',
+                        '20 yards (400$)'
+                      ].map(city => (
+                        <option key={city} value={city} label={city}>
+                          {city}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.dumpsterSize && touched.dumpsterSize ? (
+                      <div className="text-red-500">{errors.dumpsterSize}</div>
+                    ) : null}
+                  </div>
                   <div className="-mx-3 flex flex-wrap">
                     <div className="w-full px-3 sm:w-1/2">
                       <div className="mb-5">

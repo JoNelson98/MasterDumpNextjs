@@ -2,8 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -22,6 +22,7 @@ model Form {
   address   String
   deliveryDate DateTime 
   deliveryPlacement String
+  dumpsterSize String
   company String
 }
 

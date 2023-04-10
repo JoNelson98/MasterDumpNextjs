@@ -13,5 +13,6 @@ export const formSchema = yup.object().shape({
   address: yup.string().required('Address is required'),
   deliveryDate: yup.date().required('Delivery Date is required').nullable(),
   deliveryPlacement: yup.string(),
+  dumpsterSize: yup.string().required('Dumpster Size is required'),
   company: yup.string()
 })

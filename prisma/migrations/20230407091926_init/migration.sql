@@ -1,7 +1,0 @@
--- CreateTable
-CREATE TABLE "Form" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "fname" TEXT NOT NULL,
-    "lname" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);

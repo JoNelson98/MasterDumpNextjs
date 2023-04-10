@@ -10,7 +10,8 @@ import NextLink from 'next/link'
 const navigation = [
   { name: 'Book Rental', href: '/booking', current: true },
   { name: 'Gallery', href: '/gallery', current: false },
-  { name: 'Contact', href: '/contact', current: false }
+  { name: 'Contact', href: '/contact', current: false },
+  { name: 'Admin', href: '/AdminDashboard', current: false }
 ]
 
 function classNames(...classes) {

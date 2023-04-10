@@ -4,6 +4,7 @@ import Hero from '@/components/Hero'
 import { useTheme } from 'next-themes'
 import Carousel from '@/components/Gallery'
 import Contact from '@/components/Contact'
+import DumpsterDetails from '@/components/DumpsterDetails'
 
 export default function index() {
   const { theme, setTheme } = useTheme()
@@ -14,7 +15,7 @@ export default function index() {
   return (
     <Layout>
       <Hero />
-      {/* gallery component */}
+      <DumpsterDetails />
       <Carousel />
       <Contact />
     </Layout>
