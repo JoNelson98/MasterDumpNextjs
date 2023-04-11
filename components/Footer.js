@@ -17,7 +17,7 @@ export default function Footer() {
 
         <div className="flex -mx-2">
           <a
-            href="#"
+            href="https://instagram.com/masterdumpdallas?igshid=YmMyMTA2M2Y="
             className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
             aria-label="Instagram"
           >
@@ -32,7 +32,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=100090985967528&mibextid=LQQJ4d"
             className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
             aria-label="Facebook"
           >
@@ -47,7 +47,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="#"
+            href="https://g.co/kgs/XoiwfN"
             className="pt-0.5 mt-0.5 mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
             aria-label="Google"
           >

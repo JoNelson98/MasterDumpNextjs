@@ -2,12 +2,14 @@ import React from 'react'
 import Layout from '@/components/layouts/pagelayout'
 import { Formik, Field } from 'formik'
 import submitFormService from '@/components/services/submitForm'
+// import mailService from '@/components/services/mailService'
 import { phoneNumberMask } from '@/components/subComponents/PhoneInput'
 import MaskedInput from 'react-text-mask'
 import { cities, placements } from '../components/subComponents/inputData'
 import DatePicker from '@/components/subComponents/DatePicker'
 import Section from '@/components/layouts/section'
 import { formSchema } from '@/components/services/formValidation'
+import smsService from '@/components/services/smsService'
 
 export default function booking() {
   return (
@@ -50,6 +52,12 @@ export default function booking() {
                     )
                     resetForm()
                   })
+                  await smsService(values)
+                    .then(res => {
+                      alert('SMS sent successfully!')
+                    })
+                    .catch(err => alert(err.message))
+                  // await mailService(values)
                 } catch (error) {
                   alert(error)
                   console.error(error)

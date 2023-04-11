@@ -36,7 +36,7 @@ export const col = [
 ]
 
 export const formatDate = date => {
-  const DURATION_OF_RENTAL = 5
+  const DURATION_OF_RENTAL = 10
   const d = new Date(date)
   const end = new Date(date)
   end.setDate(end.getDate() + DURATION_OF_RENTAL)
