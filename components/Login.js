@@ -5,6 +5,8 @@ import {
 import Section from './layouts/section'
 import { signIn } from 'next-auth/react'
 import NextLink from 'next/link'
+import NextImage from 'next/image'
+import lightLogo from '../public/lightmdLogo.png'
 
 export default function Login() {
   return (
@@ -14,11 +16,12 @@ export default function Login() {
           <div className=" bg-grey-50 w-full max-w-md space-y-8">
             <Section delay={0.1}>
               <div>
-                <img
-                  className="mx-auto h-12 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=sky&shade=600"
+                <NextImage
+                  className="mx-auto h-40 w-auto"
+                  src={lightLogo}
                   alt="Your Company"
                 />
+
                 <h2 className="mt-6 text-center text-3xl font-bold  bg-gradient-to-l from-red-500 to-sky-500 bg-clip-text text-transparent">
                   Sign Into Dashboard
                 </h2>

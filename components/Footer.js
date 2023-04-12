@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../public/thelogo2.png'
+import logo from '../public/darkmdLogo.png'
 import Image from 'next/image'
 
 export default function Footer() {

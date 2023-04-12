@@ -1,11 +1,14 @@
-import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import ThemeButton from './ThemeButton'
-import logo from '../public/thelogo2.png'
+import logo from '../public/darkmdLogo.png'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
+import { useParams } from 'react-router-dom'
+import lightLogo from '../public/lightmdLogo.png'
+import { useTheme } from 'next-themes'
+import { useCallback, useEffect } from 'react'
 
 const navigation = [
   { name: 'Book Rental', href: '/booking', current: true },
@@ -22,6 +25,13 @@ export default function Example() {
   const router = useRouter()
   const pathname = router.pathname
   const margin = pathname === '/' ? 'xl:mt-0' : 'xl:mt-16'
+  const isHome = Boolean(pathname === '/')
+  const { theme, setTheme } = useTheme()
+  const isLightTheme = Boolean(theme === 'light')
+
+  const isDarkTheme = useCallback(() => {
+    return Boolean(theme === 'dark')
+  }, [theme])
 
   return (
     <Disclosure
@@ -47,16 +57,16 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center ">
                   <NextLink href="/">
                     <Image
-                      className="block h-32 w-auto lg:hidden"
-                      src={logo}
+                      className=" ml-6 block h-32 w-auto lg:hidden"
+                      src={isDarkTheme() ? logo : lightLogo}
                       alt="Master Dump LLC Logo"
                     />
                   </NextLink>
 
                   <NextLink href="/">
                     <Image
-                      className="hidden h-32 w-auto lg:block"
-                      src={logo}
+                      className="ml-2 hidden h-32 w-auto lg:block"
+                      src={isDarkTheme() ? logo : lightLogo}
                       alt="Your Company"
                     />
                   </NextLink>
